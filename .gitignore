@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Runtime artifacts (regenerated automatically — not committed)
+logs/*.log
+snapshots/*.jpg
+
+# OS / editor cruft
+.DS_Store
+.vscode/
+.idea/
+
+# Local env
+.venv/
+venv/

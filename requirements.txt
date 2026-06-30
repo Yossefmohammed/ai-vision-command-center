@@ -1,0 +1,23 @@
+# AI Vision Command Center — Streamlit Cloud requirements
+#
+# torch CPU-only wheel: ultralytics depends on torch, and pip's default
+# resolution on Linux pulls a full CUDA-enabled wheel (700MB+), which
+# routinely blows past Streamlit Community Cloud's free-tier build time
+# and memory limits — even though no GPU is available there anyway.
+# The --extra-index-url below makes pip prefer the much smaller CPU-only
+# build instead. This is a standard, widely-documented fix for deploying
+# ultralytics/YOLO apps on Streamlit Cloud.
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch>=2.0.0
+
+# Core vision — headless OpenCV (no GUI libs) for cloud servers
+ultralytics>=8.0.0
+mediapipe>=0.10.0
+opencv-python-headless>=4.8.0
+
+# Web UI
+streamlit>=1.28.0
+
+# Numerics / image handling
+numpy>=1.24.0
+Pillow>=9.0.0
